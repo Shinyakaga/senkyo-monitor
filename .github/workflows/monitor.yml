@@ -1,25 +1,29 @@
-name: 選挙ドットコム監視
+name: Monitor Senkyo Pages
 
 on:
   schedule:
-    - cron: "*/10 * * * *"  # 10分ごとに実行
-  workflow_dispatch:        # 手動実行も可能
+    - cron: '*/5 * * * *'   # 5分ごとに定期実行
+  workflow_dispatch:        # 手動トリガー可能
 
 jobs:
-  monitor:
+  check-updates:
     runs-on: ubuntu-latest
-
     steps:
-      - name: リポジトリをチェックアウト
+      - name: チェックアウト
         uses: actions/checkout@v3
 
       - name: Pythonセットアップ
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v3
         with:
           python-version: '3.x'
 
-      - name: requestsインストール
+      - name: 依存をインストール
         run: pip install requests
 
-      - name: ページの更新確認
+      - name: 更新チェック実行
+        env:
+          SMTP_HOST:     ${{ secrets.SMTP_HOST }}
+          SMTP_PORT:     ${{ secrets.SMTP_PORT }}
+          SMTP_USER:     ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
         run: python monitor.py
