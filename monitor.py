@@ -29,6 +29,7 @@ candidates = {
     "風間 ゆたか":  "https://go2senkyo.com/seijika/18554",
     "高岡 じゅん子":"https://go2senkyo.com/seijika/30954",
     "平井 しげる":  "https://go2senkyo.com/seijika/196580",
+    "小松 大祐":  "https://go2senkyo.com/seijika/30953",
     "ク ガイ":      "https://go2senkyo.com/seijika/196661",
 }
 
