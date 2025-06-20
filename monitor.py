@@ -2,7 +2,7 @@ import requests, hashlib, os, smtplib
 from email.mime.text import MIMEText
 
 # 通知先メールアドレス
-TO_EMAIL = "kaga.shinya@tsunag-i.com"
+TO_EMAILS = ["kaga.shinya@tsunag-i.com", "ryotakiuchi0722@gmail.com"]
 FROM_EMAIL = "no-reply@example.com"
 
 # GitHub ActionsのSecretsに登録した環境変数名
