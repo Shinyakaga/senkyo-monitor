@@ -6,10 +6,10 @@ TO_EMAILS = ["kaga.shinya@tsunag-i.com", "ryotakiuchi0722@gmail.com"]
 FROM_EMAIL = "no-reply@example.com"
 
 # GitHub ActionsのSecretsに登録した環境変数名
-SMTP_HOST     = os.getenv("SMTP_HOST")
-SMTP_PORT     = int(os.getenv("SMTP_PORT", 587))
-SMTP_USER     = os.getenv("SMTP_USER")
-SMTP_PASSWORD = os.getenv("SMTP_PASSWORD")
+SMTP_HOST     = os.getenv("smtp.sendgrid.net")
+SMTP_PORT     = int(os.getenv("587", 587))
+SMTP_USER     = os.getenv("apikey")
+SMTP_PASSWORD = os.getenv("")
 
 # 監視対象候補者一覧
 candidates = {
